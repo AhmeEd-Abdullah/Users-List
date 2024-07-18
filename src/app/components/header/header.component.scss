@@ -1,0 +1,19 @@
+.container {
+  .navbar-brand {
+    color: #86b7fe;
+  }
+  .rounded-circle {
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    background-image: url("../../../assets/blue-circle-with-white-user_78370-4707.avif");
+  }
+  .drop-down {
+    bottom: -65px;
+    left: 0;
+    padding: 5px 10px;
+    &.not-found {
+      bottom: -40px;
+    }
+  }
+}

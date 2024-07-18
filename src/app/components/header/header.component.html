@@ -1,0 +1,27 @@
+<nav class="navbar navbar-light bg-body-tertiary">
+  <div class="container-fluid container">
+    <a class="navbar-brand fs-4 fw-semibold">Users-List</a>
+    <form class="d-flex flex-column input-group w-auto position-relative">
+      <input #search (keyup)="Search(search.value)" type="text" class="form-control w-100 rounded"
+        placeholder="Search by user ID" aria-label="Search" aria-describedby="search-addon" />
+      @if (userExist) {
+      <div>
+        @for (user of searchResult; track $index) {
+        <div (click)="navigateUser(user.id)"
+          class="position-absolute border border-primary-subtle w-100 rounded drop-down" role="button">
+          <div class="d-flex align-items-center">
+            <div class="rounded-circle">
+            </div>
+            <span class="fw-bold ms-3">{{user.name}}</span>
+          </div>
+        </div>
+        }
+      </div>
+      }
+      @if (userNotExist) {
+      <div class="position-absolute border border-primary-subtle w-100 rounded drop-down not-found">No results found
+      </div>
+      }
+    </form>
+  </div>
+</nav>

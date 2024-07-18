@@ -1,0 +1,32 @@
+<app-header [users]="usersList"></app-header>
+
+<div class="container users-list">
+    <table class="table">
+        <thead>
+            <tr class="fs-6">
+                <th scope="col">ID</th>
+                <th scope="col">name</th>
+                <th class="username" scope="col">User Name</th>
+                <th scope="col">City</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (user of usersList; track $index) {
+            <tr role="button" [routerLink]="user.id">
+                <td class="align-middle" scope="row">{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td class="username">{{user.username}}</td>
+                <td>{{user.address.city}}</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- <nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+    </ul>
+</nav> -->

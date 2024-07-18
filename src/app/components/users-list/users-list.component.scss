@@ -1,0 +1,27 @@
+.users-list {
+  margin-top: 50px;
+  table {
+    thead {
+      th {
+        color: #86b7fe;
+        @media (min-width: 544px) {
+          font-size: 1.3rem;
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          font-weight: bold;
+          padding-top: 15px;
+          padding-bottom: 15px;
+        }
+      }
+    }
+    .username {
+      @media (max-width: 567px) {
+        display: none;
+      }
+    }
+  }
+}

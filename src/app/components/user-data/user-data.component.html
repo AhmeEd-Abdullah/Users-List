@@ -1,0 +1,25 @@
+<section class="vh-100 bg-light position-relative">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-lg-6 mb-4 mb-lg-0">
+        <div class="card mb-3">
+          <div class="card-body p-4">
+            <h5 class="text-primary">User Information</h5>
+            <hr class="mt-0 mb-4">
+            @for (user of userData | keyvalue; track $index) {
+            @if (user.key !== 'address' && user.key !== 'company') {
+            <div class="d-flex align-items-center">
+              <p class="text-primary key">{{user.key}}:</p>
+              <p class="text-primary value">{{user.value}}</p>
+            </div>
+            }
+            }
+          </div>
+        </div>
+      </div>
+      <div>
+        <button type="button" class="btn btn-outline-primary" routerLink="/users">GoBack</button>
+      </div>
+    </div>
+  </div>
+</section>
