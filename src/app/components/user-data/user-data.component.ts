@@ -14,7 +14,6 @@ import { LoaderComponent } from '../loader/loader.component';
 })
 export class UserDataComponent implements OnInit {
   userData: any;
-  // loading: boolean = false;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -27,16 +26,13 @@ export class UserDataComponent implements OnInit {
   }
 
   getUserData() {
-    // this.loading = true;
     const userId = this.activatedRoute.snapshot.params['id'];
     const cacheKey = 'userData';
     if (this.cachingService.has(cacheKey + userId, 'user')) {
       this.userData = this.userDataService.fetchData(userId);
-      // this.loading = false;
     } else {
       this.userDataService.fetchData(userId).subscribe((user) => {
         this.userData = user;
-        // this.loading = false;
       });
     }
   }

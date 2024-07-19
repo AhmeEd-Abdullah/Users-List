@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { LoaderService } from './../../core/services/loader.service';
+import { Component, inject } from '@angular/core';
 
 @Component({
   selector: 'app-loader',
@@ -8,5 +9,6 @@ import { Component } from '@angular/core';
   styleUrl: './loader.component.scss',
 })
 export class LoaderComponent {
-  constructor() {}
+  private readonly loaderService = inject(LoaderService);
+  public isLoading = this.loaderService.isLoading;
 }
